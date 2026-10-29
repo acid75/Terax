@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.20)
+project(terax_ble_probe LANGUAGES CXX)
+add_executable(terax_ble_probe main.cpp)
+target_compile_features(terax_ble_probe PRIVATE cxx_std_20)
+target_compile_definitions(terax_ble_probe PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN)
+target_link_libraries(terax_ble_probe PRIVATE windowsapp)

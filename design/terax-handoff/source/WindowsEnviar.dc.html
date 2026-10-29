@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Enviar al teléfono</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="terax.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="tx-root" style="width: 1280px; height: 800px; display: flex; overflow: hidden; border-radius: 10px; border: 1px solid #222c38; background: var(--bg);">
+  <nav aria-label="Secciones" style="width: 232px; flex: none; display: flex; flex-direction: column; gap: 4px; padding: 24px 16px; border-right: 1px solid #18212c;">
+    <img src="/_blob/9f2c0fcfd4186b307185bfb8c405152b" alt="terax" style="height: 26px; width: auto; align-self: flex-start; margin: 0 8px 28px;">
+    <a href="WindowsRecibir.dc.html" style="display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 12px; border-radius: 12px; color: var(--text-muted); font-size: 14px; font-weight: 600; text-decoration: none;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7L7 17M16 17H7V8"/></svg>Recibir
+    </a>
+    <a href="WindowsEnviar.dc.html" aria-current="page" style="display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 12px; border-radius: 12px; background: var(--surface); color: var(--mint); font-size: 14px; font-weight: 600; text-decoration: none;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>Enviar al teléfono
+    </a>
+    <h2 style="margin: 28px 12px 6px; font-size: 12px; line-height: 16px; font-weight: 600; color: var(--text-muted);">Carpetas</h2>
+    <button aria-pressed="true" style="display: flex; align-items: center; gap: 12px; height: 40px; padding: 0 12px; border: 0; border-radius: 10px; background: #1a2430; color: var(--text); font-size: 14px; cursor: pointer;">Documentos</button>
+    <button style="display: flex; align-items: center; gap: 12px; height: 40px; padding: 0 12px; border: 0; border-radius: 10px; background: transparent; color: var(--text-muted); font-size: 14px; cursor: pointer;">Descargas</button>
+    <button style="display: flex; align-items: center; gap: 12px; height: 40px; padding: 0 12px; border: 0; border-radius: 10px; background: transparent; color: var(--text-muted); font-size: 14px; cursor: pointer;">Imágenes</button>
+    <button style="display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 12px; border: 0; border-radius: 10px; background: transparent; color: var(--mint); font-size: 14px; font-weight: 600; cursor: pointer;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Agregar carpeta
+    </button>
+  </nav>
+
+  <main style="flex: 1; min-width: 0; display: flex; flex-direction: column;">
+    <div style="display: flex; align-items: center; gap: 16px; padding: 20px 28px; border-bottom: 1px solid #18212c;">
+      <label style="flex: 1; max-width: 480px; display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 14px; border: 1px solid var(--outline); border-radius: 10px; color: var(--text-muted);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input type="search" placeholder="Buscar en Documentos" aria-label="Buscar en Documentos" style="flex: 1; border: 0; background: transparent; font-size: 15px; outline: none;">
+        <span style="font-family: var(--font-mono); font-size: 11px; padding: 2px 6px; border-radius: 6px; border: 1px solid var(--outline);">Ctrl F</span>
+      </label>
+      <span style="flex: 1;"></span>
+      <span style="display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px 0 10px; border-radius: 999px; background: var(--surface); font-size: 13px; font-weight: 600;">
+        <span style="width: 8px; height: 8px; border-radius: 999px; background: var(--mint);"></span>Mi Android · Conectado
+      </span>
+    </div>
+
+    <div style="flex: 1; min-height: 0; display: flex;">
+      <div style="flex: 1; min-width: 0; padding: 12px 20px;">
+        <div role="row" style="display: grid; grid-template-columns: minmax(0, 1fr) 90px 90px 120px; gap: 12px; padding: 8px 12px; font-size: 12px; font-weight: 600; color: var(--text-muted);">
+          <span>Nombre</span><span>Tipo</span><span style="text-align: right;">Tamaño</span><span>Modificado</span>
+        </div>
+        <sc-for list="{{rows}}" as="r" hint-placeholder-count="9">
+          <div role="row" aria-selected="{{r.sel}}" style="display: grid; grid-template-columns: minmax(0, 1fr) 90px 90px 120px; gap: 12px; align-items: center; height: 44px; padding: 0 12px; border-radius: 10px; background: {{r.bg}}; outline: {{r.ring}}; font-size: 14px;">
+            <span style="display: flex; align-items: center; gap: 10px; min-width: 0;"><span style="width: 28px; height: 28px; flex: none; border-radius: 6px; background: #1f2a36; display: grid; place-items: center; font-family: var(--font-mono); font-size: 9px; color: var(--text-muted);">{{r.badge}}</span><span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{r.name}}</span></span>
+            <span style="color: var(--text-muted);">{{r.type}}</span>
+            <span style="font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); text-align: right;">{{r.size}}</span>
+            <span style="color: var(--text-muted);">{{r.date}}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <aside aria-label="Archivo seleccionado" style="width: 340px; flex: none; border-left: 1px solid #18212c; padding: 28px 24px; display: flex; flex-direction: column; gap: 16px;">
+        <div style="height: 300px; border-radius: 16px; background: var(--surface); display: grid; place-items: center;">
+          <div style="width: 150px; height: 196px; border-radius: 10px; background: #e9edf2; position: relative; display: flex; flex-direction: column; gap: 8px; padding: 22px 18px;">
+            <span style="height: 8px; width: 70%; border-radius: 4px; background: #c5ccd5;"></span>
+            <span style="height: 6px; width: 100%; border-radius: 3px; background: #d6dbe2;"></span>
+            <span style="height: 6px; width: 92%; border-radius: 3px; background: #d6dbe2;"></span>
+            <span style="height: 6px; width: 96%; border-radius: 3px; background: #d6dbe2;"></span>
+            <span style="position: absolute; right: -10px; bottom: 18px; padding: 4px 10px; border-radius: 6px; background: var(--on-mint); color: var(--mint); font-family: var(--font-mono); font-size: 13px; font-weight: 500;">PDF</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <span style="font-size: 16px; line-height: 22px; font-weight: 600;">Contrato_servicios_2026.pdf</span>
+          <span style="font-family: var(--font-mono); font-size: 12px; line-height: 18px; color: var(--text-muted);">PDF · 2.3 MB · 27 oct 2026</span>
+        </div>
+        <button style="height: 44px; border: 0; border-radius: 12px; background: var(--mint); color: var(--on-mint); font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+          Enviar a Mi Android
+        </button>
+        <span style="font-size: 12px; line-height: 17px; color: var(--text-muted);">Llega a Terax en el teléfono. Mantén la app abierta allá hasta que termine.</span>
+      </aside>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const data = [
+      ['Facturas', 'DIR', 'Carpeta', '—', 'hoy'],
+      ['Contrato_servicios_2026.pdf', 'PDF', 'PDF', '2.3 MB', '27 oct 2026'],
+      ['Presupuesto_Q4.xlsx', 'XLS', 'Excel', '1.2 MB', '26 oct 2026'],
+      ['Propuesta comercial — versión revisada por dirección.docx', 'DOC', 'Word', '640 KB', '25 oct 2026'],
+      ['Presentación_ventas.pptx', 'PPT', 'PowerPoint', '18.4 MB', '22 oct 2026'],
+      ['notas.txt', 'TXT', 'Texto', '4 KB', '20 oct 2026'],
+      ['Inventario.csv', 'CSV', 'CSV', '96 KB', '18 oct 2026'],
+      ['Respaldo_fotos_2025.zip', 'ZIP', 'Comprimido', '1.4 GB', '2 oct 2026'],
+      ['instalador.exe', 'EXE', 'Aplicación', '88 MB', '30 sep 2026']
+    ];
+    return { rows: data.map((d, i) => ({ name: d[0], badge: d[1], type: d[2], size: d[3], date: d[4], sel: i === 1 ? 'true' : 'false', bg: i === 1 ? 'rgba(155,233,221,.10)' : 'transparent', ring: i === 1 ? '1.5px solid var(--mint)' : 'none' })) };
+  }
+}
+</script>
+</body>
+</html>

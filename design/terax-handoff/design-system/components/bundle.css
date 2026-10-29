@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Icons&family=Material+Icons+Outlined&display=block");
+
+/* Terax — component styles. Values come from tokens.css; Android sizes are the
+   only literals, applied under [data-theme="android"]. */
+
+.tx { font-family: var(--font-ui); color: var(--text); -webkit-font-smoothing: antialiased; box-sizing: border-box; }
+.tx *, .tx *::before, .tx *::after { box-sizing: border-box; }
+
+.tx-icon { font-family: "Material Icons Outlined"; font-weight: normal; font-style: normal; font-size: 20px; line-height: 1; letter-spacing: normal; text-transform: none; white-space: nowrap; direction: ltr; -webkit-font-feature-settings: "liga"; font-feature-settings: "liga"; display: inline-block; flex: none; }
+.tx-icon.filled { font-family: "Material Icons"; }
+.tx-icon.lg { font-size: 24px; }
+
+/* Focus: solid mint ring, 2px, offset 2px (≥12:1 on bg and surface) */
+.tx :focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
+
+/* Header */
+.tx-header { display: flex; align-items: center; gap: var(--space-12); padding: var(--space-12) 0; }
+.tx-brand { display: flex; align-items: center; gap: 6px; font-size: 26px; line-height: 32px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; }
+.tx-brand .tx-icon { font-size: 24px; }
+.tx-logo { display: block; height: 28px; width: auto; }
+[data-theme="android"] .tx-logo { height: 32px; }
+.tx-mono { font-family: var(--font-mono); font-size: 13px; line-height: 18px; color: var(--text-muted); }
+.tx-code { font-family: var(--font-mono); font-size: 20px; line-height: 28px; font-weight: 500; letter-spacing: 1px; color: var(--text); }
+
+/* Danger */
+.tx-btn.danger { background: var(--danger); color: var(--on-danger); }
+.tx-link.danger { color: var(--danger); }
+
+/* Confirm dialog */
+.tx-dialog { background: var(--surface); border-radius: var(--radius-sheet); padding: 24px; max-width: 360px; display: flex; flex-direction: column; gap: 12px; }
+.tx-dialog-icon { color: var(--danger); font-size: 24px; }
+.tx-dialog-title { font-size: 20px; line-height: 28px; font-weight: 600; }
+.tx-dialog-body { font-size: 14px; line-height: 21px; color: var(--text-muted); }
+.tx-dialog-body strong { color: var(--text); font-weight: 600; }
+.tx-dialog-actions { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-top: 12px; }
+.tx-header-status { margin-left: auto; display: flex; align-items: center; gap: 6px; font-size: 13px; line-height: 18px; color: var(--text-muted); white-space: nowrap; }
+.tx-header-status .tx-icon { color: var(--mint); font-size: 16px; }
+.tx-iconbtn { width: 40px; height: 40px; display: inline-grid; place-items: center; border: 0; border-radius: var(--radius-full); background: transparent; color: var(--text-muted); cursor: pointer; }
+.tx-iconbtn:hover { background: var(--surface); }
+.tx-glow { background: radial-gradient(120% 100% at 50% 0%, var(--glow) 0%, var(--bg) 75%); }
+
+/* Device card */
+.tx-device { display: flex; align-items: center; gap: var(--space-12); min-height: var(--size-device-card); padding: 0 var(--space-16); background: var(--surface); border-radius: var(--radius-lg); }
+.tx-device-icon { width: 40px; height: 40px; flex: none; display: grid; place-items: center; border-radius: var(--radius-full); background: var(--icon-container); border: 1px solid var(--icon-ring); color: var(--icon-on-container); }
+.tx-device-text { min-width: 0; flex: 1; }
+.tx-device-name { font-size: 14px; line-height: 20px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tx-device-status { font-size: 13px; line-height: 18px; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tx-device-trail { color: var(--text-muted); }
+
+/* Segmented control */
+.tx-segment { display: flex; height: var(--size-segment); border: 1px solid var(--outline); border-radius: var(--radius-md); overflow: hidden; }
+.tx-segment button { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; border: 0; background: transparent; color: var(--text); font: 600 14px/20px var(--font-ui); cursor: pointer; }
+.tx-segment button + button { border-left: 1px solid var(--outline); }
+.tx-segment button[aria-selected="true"] { background: var(--accent); color: var(--on-accent); }
+.tx-segment .tx-icon { font-size: 18px; }
+
+/* Search field */
+.tx-search { display: flex; align-items: center; gap: var(--space-16); height: var(--size-input); padding: 0 var(--space-16); border: 1px solid var(--outline); border-radius: var(--radius-sm); color: var(--text-muted); }
+.tx-search input { flex: 1; min-width: 0; border: 0; background: transparent; color: var(--text); font: 400 16px/24px var(--font-ui); outline: none; }
+.tx-search input::placeholder { color: var(--text-muted); }
+.tx-search:focus-within { border-color: var(--mint); }
+
+/* Section header */
+.tx-section { display: flex; align-items: center; justify-content: space-between; gap: var(--space-12); min-height: 40px; }
+.tx-section-title { font-size: 13px; line-height: 18px; font-weight: 600; }
+
+/* Buttons */
+.tx-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: var(--size-button); padding: 0 24px; border: 0; border-radius: var(--radius-lg); background: var(--mint); color: var(--on-mint); font: 600 14px/20px var(--font-ui); cursor: pointer; }
+.tx-btn:hover { filter: brightness(1.06); }
+.tx-btn:disabled { background: var(--surface); color: var(--text-muted); cursor: default; filter: none; }
+.tx-link { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 4px; border: 0; background: transparent; color: var(--mint); font: 600 14px/20px var(--font-ui); cursor: pointer; white-space: nowrap; }
+.tx-link.neutral { color: var(--text-muted); }
+
+/* Library tiles */
+.tx-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--size-tile), 1fr)); gap: var(--space-6); }
+.tx-tile { min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.tx-tile-media { aspect-ratio: 1 / 1; border-radius: var(--radius-sm); background: var(--surface); display: grid; place-items: center; overflow: hidden; color: var(--text-muted); }
+.tx-tile-media img { width: 100%; height: 100%; object-fit: cover; }
+.tx-tile-name { font-size: 13px; line-height: 18px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tx-tile-meta { font-size: 13px; line-height: 18px; color: var(--text-muted); margin-top: -4px; }
+.tx-tile.is-loading .tx-tile-media { background: linear-gradient(90deg, var(--surface) 0%, var(--outline) 50%, var(--surface) 100%); background-size: 200% 100%; animation: tx-shimmer 1.4s linear infinite; }
+@keyframes tx-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .tx-tile.is-loading .tx-tile-media { animation: none; background: var(--surface); } }
+
+/* Switch */
+.tx-switch { position: relative; width: 52px; height: 32px; flex: none; border-radius: var(--radius-full); border: 2px solid var(--control-off); background: transparent; cursor: pointer; padding: 0; }
+.tx-switch::after { content: ""; position: absolute; top: 50%; left: 6px; width: 16px; height: 16px; margin-top: -8px; border-radius: 50%; background: var(--control-off); transition: left .15s, width .15s, height .15s, margin .15s; }
+.tx-switch[aria-checked="true"] { background: var(--mint); border-color: var(--mint); }
+.tx-switch[aria-checked="true"]::after { left: 22px; width: 24px; height: 24px; margin-top: -12px; background: var(--on-mint); }
+@media (prefers-reduced-motion: reduce) { .tx-switch::after { transition: none; } }
+
+/* Sheet */
+.tx-sheet { background: var(--surface); border-radius: var(--radius-sheet) var(--radius-sheet) 0 0; padding: 12px var(--space-16) var(--space-16); }
+.tx-sheet-handle { width: 32px; height: 4px; margin: 0 auto 12px; border-radius: 2px; background: var(--text-muted); }
+.tx-sheet-head { display: flex; align-items: center; justify-content: space-between; padding: 8px 8px 4px; }
+.tx-sheet-title { font-size: 24px; line-height: 32px; font-weight: 400; }
+.tx-divider { height: 1px; background: var(--divider); margin: 8px 8px; border: 0; }
+.tx-row { display: flex; align-items: center; gap: var(--space-16); min-height: 56px; padding: 8px; }
+.tx-row > .tx-icon { color: var(--text-muted); }
+.tx-row-text { flex: 1; min-width: 0; }
+.tx-row-title { font-size: 16px; line-height: 24px; }
+.tx-row-sub { font-size: 13px; line-height: 18px; color: var(--text-muted); }
+
+/* Empty state */
+.tx-empty { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 32px 16px; }
+.tx-empty-icon { color: var(--mint); font-size: 48px; margin-bottom: 8px; }
+.tx-empty-title { font-size: 20px; line-height: 28px; font-weight: 600; }
+.tx-empty-title.display { font-size: 36px; line-height: 44px; }
+.tx-empty-body { font-size: 16px; line-height: 26px; color: var(--text-muted); max-width: 34ch; }
+.tx-empty .tx-btn { margin-top: 16px; }
+
+/* Windows bottom bar */
+.tx-bottombar { display: flex; align-items: center; gap: 24px; min-height: 48px; }
+.tx-bottombar .spacer { flex: 1; }
+.tx-bottombar .tx-link[aria-current="page"] { color: var(--mint); }
+.tx-bottombar .tx-link:not([aria-current]) { color: var(--text-muted); }
+.tx-bottombar .tx-link.trail { color: var(--mint); }
+
+/* Gesture hint */
+.tx-hint { font-size: 13px; line-height: 18px; color: var(--text-muted); text-align: center; }
+
+/* Android sizes (≈dp, measured on a ~392dp-wide phone) */
+[data-theme="android"] .tx-segment { height: 40px; border-radius: var(--radius-full); }
+[data-theme="android"] .tx-search { height: 56px; border-radius: var(--radius-lg); }
+[data-theme="android"] .tx-btn { height: 52px; border-radius: 16px; padding: 0 28px; }
+[data-theme="android"] .tx-device { min-height: 70px; border-radius: 20px; }
+[data-theme="android"] .tx-device-icon { width: 44px; height: 44px; border-width: 2px; }
+[data-theme="android"] .tx-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+[data-theme="android"] .tx-tile-media { aspect-ratio: 1 / 0.95; }

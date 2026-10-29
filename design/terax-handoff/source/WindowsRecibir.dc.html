@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Listo para recibir</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="terax.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="tx-root" style="width: 1280px; height: 800px; display: flex; overflow: hidden; border-radius: 10px; border: 1px solid #222c38; background: var(--bg);">
+  <nav aria-label="Secciones" style="width: 232px; flex: none; display: flex; flex-direction: column; gap: 4px; padding: 24px 16px; border-right: 1px solid #18212c;">
+    <img src="/_blob/9f2c0fcfd4186b307185bfb8c405152b" alt="terax" style="height: 26px; width: auto; align-self: flex-start; margin: 0 8px 28px;">
+    <a href="WindowsRecibir.dc.html" aria-current="page" style="display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 12px; border-radius: 12px; background: var(--surface); color: var(--mint); font-size: 14px; font-weight: 600; text-decoration: none;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7L7 17M16 17H7V8"/></svg>Recibir
+    </a>
+    <a href="WindowsEnviar.dc.html" style="display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 12px; border-radius: 12px; color: var(--text-muted); font-size: 14px; font-weight: 600; text-decoration: none;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>Enviar al teléfono
+    </a>
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 4px;">
+      <button style="display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 12px; border: 0; border-radius: 12px; background: transparent; color: var(--text-muted); font-size: 14px; font-weight: 600; cursor: pointer;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Carpeta Recibidos
+      </button>
+      <button style="display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 12px; border: 0; border-radius: 12px; background: transparent; color: var(--text-muted); font-size: 14px; font-weight: 600; cursor: pointer;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg>Equipos y ajustes
+      </button>
+    </div>
+  </nav>
+
+  <main style="flex: 1; min-width: 0; display: flex; flex-direction: column; position: relative;">
+    <div style="display: flex; align-items: center; gap: 16px; padding: 20px 32px; border-bottom: 1px solid #18212c;">
+      <span style="width: 40px; height: 40px; flex: none; border-radius: 999px; background: var(--icon-container); border: 1px solid var(--icon-ring); color: var(--icon-on-container); display: grid; place-items: center;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+      </span>
+      <span style="display: flex; flex-direction: column;">
+        <span style="font-size: 15px; line-height: 20px; font-weight: 600;">Mi Android</span>
+        <span style="display: flex; gap: 6px; margin-top: 4px;">
+          <span style="display: flex; align-items: center; gap: 4px; height: 22px; padding: 0 8px; border-radius: 999px; background: rgba(155,233,221,.14); color: var(--mint); font-size: 12px; font-weight: 600;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Conectado</span>
+          <span style="display: flex; align-items: center; gap: 4px; height: 22px; padding: 0 8px; border-radius: 999px; background: rgba(155,233,221,.14); color: var(--mint); font-size: 12px; font-weight: 600;">Cerca</span>
+        </span>
+      </span>
+      <span style="flex: 1;"></span>
+      <label style="display: flex; align-items: center; gap: 12px; font-size: 14px;">
+        <span style="display: flex; flex-direction: column; text-align: right;">
+          <span style="font-weight: 600;">Recepción activada</span>
+          <span style="font-size: 12px; color: var(--text-muted);">Abrir al recibir: fotos y documentos</span>
+        </span>
+        <button role="switch" aria-checked="true" aria-label="Permitir recepción" style="width: 48px; height: 28px; flex: none; border: 0; border-radius: 999px; background: var(--mint); position: relative; cursor: pointer;"><span style="position: absolute; right: 4px; top: 4px; width: 20px; height: 20px; border-radius: 999px; background: var(--on-mint);"></span></button>
+      </label>
+    </div>
+
+    <div style="flex: 1; min-height: 0; display: flex;">
+      <section style="flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; position: relative; overflow: hidden;">
+        <div aria-hidden="true" style="position: absolute; left: 10%; right: 10%; bottom: -220px; height: 380px; background: radial-gradient(50% 50% at 50% 60%, rgba(155,233,221,.18) 0%, rgba(155,233,221,0) 70%);"></div>
+        <svg width="132" height="96" viewBox="0 0 132 96" fill="none" stroke="var(--illustration-line)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="10" width="80" height="54" rx="6"/><path d="M2 72h100"/><rect x="96" y="30" width="30" height="56" rx="7" transform="rotate(-8 111 58)"/><path d="M58 40l12-12M60 28h10v10" stroke="var(--mint)"/></svg>
+        <h1 style="margin: 12px 0 0; font-size: 36px; line-height: 44px; font-weight: 700;">Listo para recibir</h1>
+        <p style="margin: 0; max-width: 420px; font-size: 16px; line-height: 26px; color: var(--text-muted);">En tu teléfono, mantén presionado un archivo y llévalo arriba. Llega por aquí abajo.</p>
+        <p style="margin: 20px 0 0; font-size: 13px; line-height: 18px; color: var(--text-muted);">Se guardan en <span style="color: var(--text); font-weight: 600;">Documentos › Terax › Recibidos</span></p>
+      </section>
+
+      <aside aria-label="Actividad de esta sesión" style="width: 340px; flex: none; border-left: 1px solid #18212c; padding: 24px 20px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between;">
+          <h2 style="margin: 0; font-size: 14px; font-weight: 600;">En esta sesión</h2>
+          <span style="font-size: 12px; color: var(--text-muted);">Se borra al salir</span>
+        </div>
+        <sc-for list="{{items}}" as="it" hint-placeholder-count="4">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 12px; background: var(--surface);">
+            <span style="width: 44px; height: 44px; flex: none; border-radius: 8px; background: {{it.tone}}; display: grid; place-items: center; font-family: var(--font-mono); font-size: 10px; color: var(--text);">{{it.badge}}</span>
+            <span style="flex: 1; min-width: 0; display: flex; flex-direction: column;">
+              <span style="font-size: 13px; line-height: 18px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{it.name}}</span>
+              <span style="font-size: 12px; line-height: 16px; color: var(--text-muted);">{{it.meta}}</span>
+            </span>
+            <button aria-label="Abrir {{it.name}}" style="height: 32px; padding: 0 10px; border: 0; border-radius: 8px; background: transparent; color: var(--mint); font-size: 13px; font-weight: 600; cursor: pointer;">Abrir</button>
+          </div>
+        </sc-for>
+      </aside>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { items: [
+      { name: 'IMG_20261028_093310.jpg', meta: '↙ Recibido · 4.8 MB · 10:42', tone: '#2f4256', badge: '' },
+      { name: 'Factura_octubre_2026.pdf', meta: '↙ Recibido · 412 KB · 10:15', tone: '#26313d', badge: 'PDF' },
+      { name: 'Presupuesto_Q4.xlsx', meta: '↗ Enviado · 1.2 MB · 09:58', tone: '#26313d', badge: 'XLS' },
+      { name: 'Screenshot_20261028_0954.png', meta: '↙ Recibido · 860 KB · 09:54', tone: '#4b5a6b', badge: '' }
+    ] };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!-- @dsCard height=288 -->
+<div class="cover">
+  <!--
+    blocks: accent 144×180 (radius-lg), mint 132×96 (radius-lg), text-muted 96×48 (radius-sm)
+    arrangement: one tall turquoise slab bleeding off the top-right, mint and muted satellites to its left
+    pattern: literal motif. Concentric arcs rising from the bottom edge, Terax's "light born at the edge, expanding wave"
+    scales: arc pitch space-48, stroke 2px in mint, gaps space-12, radii radius-lg / radius-sm
+  -->
+  <svg class="art" viewBox="0 0 960 288" width="960" height="288" aria-hidden="true">
+    <g class="wave">
+      <path d="M672 288 A48 48 0 0 1 768 288" />
+      <path d="M624 288 A96 96 0 0 1 816 288" />
+      <path d="M576 288 A144 144 0 0 1 864 288" />
+      <path d="M528 288 A192 192 0 0 1 912 288" />
+    </g>
+    <rect class="accent big" x="816" y="-12" width="156" height="192" />
+    <rect class="mint big" x="672" y="-12" width="132" height="108" />
+    <rect class="muted small" x="564" y="24" width="96" height="48" />
+  </svg>
+  <div class="text">
+    <div class="name">Terax</div>
+    <div class="tag">Vincula tu teléfono una vez. Después solo acerca y desliza.</div>
+  </div>
+</div>
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .cover { position: relative; width: 960px; height: 288px; overflow: hidden; background: var(--bg); }
+  .art { position: absolute; inset: 0; }
+  .wave path { fill: none; stroke: var(--mint); stroke-width: 2; }
+  .accent { fill: var(--accent); }
+  .mint { fill: var(--mint); }
+  .muted { fill: var(--text-muted); }
+  .big { rx: var(--radius-lg); }
+  .small { rx: var(--radius-sm); }
+  .text { position: absolute; left: var(--space-48); bottom: var(--space-48); max-width: 420px; }
+  .name { font-family: var(--font-ui); font-size: 120px; line-height: .92; font-weight: 600; color: var(--text); letter-spacing: -2px; }
+  .tag { margin-top: var(--space-12); font-family: var(--font-ui); font-size: 14px; line-height: 20px; color: var(--text-muted); }
+</style>
+<script></script>

@@ -1,0 +1,24 @@
+/* Terax — variables del sistema de diseño (copiados de ds/terax/tokens.json) */
+@font-face { font-family: "Figtree"; src: url("ds/terax/fonts/Figtree-Variable.woff2") format("woff2"); font-weight: 300 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Geist Mono"; src: url("ds/terax/fonts/GeistMono-Regular.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Geist Mono"; src: url("ds/terax/fonts/GeistMono-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+
+:root {
+  --bg: #0b1016; --glow: #0b1016; --surface: #141d27; --scrim: rgba(0,0,0,.5);
+  --outline: #344556; --divider: #898e93; --text: #f3f6fa; --text-muted: #abb8cb;
+  --accent: #03dac6; --on-accent: #000000; --mint: #9be9dd; --on-mint: #082a22;
+  --danger: #f2b8b5; --on-danger: #601410;
+  --icon-container: #141d27; --icon-ring: #2c3b4b; --icon-on-container: #f3f6fa;
+  --control-off: #3c4a59; --illustration-line: #3d5c5b;
+  --font-ui: Figtree, "Segoe UI", Roboto, system-ui, sans-serif;
+  --font-mono: "Geist Mono", Consolas, "Roboto Mono", monospace;
+}
+.android {
+  --bg: #0c0f14; --glow: #42464a; --surface: #161d27; --outline: #3a4853; --divider: #3a4853;
+  --accent: #62d7c5; --on-accent: #0c0f14; --mint: #abe7dd; --on-mint: #122921;
+  --icon-container: #334549; --icon-ring: #73888d; --icon-on-container: #abe7dd;
+}
+.tx-root { font-family: var(--font-ui); color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+.tx-root * { box-sizing: border-box; }
+.tx-root button, .tx-root input { font: inherit; color: inherit; }
+.tx-root :focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }

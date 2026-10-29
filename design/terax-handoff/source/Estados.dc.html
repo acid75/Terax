@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Estados de transferencia y errores</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="terax.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="tx-root" style="width: 1280px; min-height: 1440px; padding: 56px 64px; display: flex; flex-direction: column; gap: 40px; background: var(--bg);">
+  <header style="display: flex; flex-direction: column; gap: 8px;">
+    <h1 style="margin: 0; font-size: 32px; line-height: 40px; font-weight: 700;">Estados de transferencia</h1>
+    <p style="margin: 0; max-width: 760px; font-size: 15px; line-height: 23px; color: var(--text-muted);">Cada estado se dice con icono y palabra, nunca solo con color. El éxito solo aparece después de verificar; un fallo nunca queda tapado por la animación.</p>
+  </header>
+
+  <section aria-label="Estados" style="display: flex; flex-direction: column; border-radius: 20px; background: var(--surface); overflow: hidden;">
+    <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) minmax(0, 1fr) 140px; gap: 24px; padding: 14px 24px; font-size: 12px; font-weight: 600; color: var(--text-muted); border-bottom: 1px solid #22303e;">
+      <span>Estado</span><span>Android (quien envía)</span><span>Windows (quien recibe)</span><span>Acción</span>
+    </div>
+    <sc-for list="{{states}}" as="s" hint-placeholder-count="9">
+      <div style="display: grid; grid-template-columns: 200px minmax(0, 1fr) minmax(0, 1fr) 140px; gap: 24px; align-items: center; min-height: 56px; padding: 10px 24px; border-bottom: 1px solid #1b2733; font-size: 14px; line-height: 20px;">
+        <span style="display: flex; align-items: center; gap: 10px; font-weight: 600; color: {{s.color}};"><span style="width: 24px; text-align: center; font-family: var(--font-mono);">{{s.icon}}</span>{{s.name}}</span>
+        <span>{{s.android}}</span>
+        <span>{{s.windows}}</span>
+        <span style="color: {{s.actionColor}}; font-weight: 600;">{{s.action}}</span>
+      </div>
+    </sc-for>
+  </section>
+
+  <section aria-label="Errores, permisos y avisos" style="display: flex; flex-direction: column; gap: 16px;">
+    <h2 style="margin: 0; font-size: 22px; line-height: 30px; font-weight: 700;">Errores, permisos y avisos</h2>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;">
+      <sc-for list="{{issues}}" as="e" hint-placeholder-count="16">
+        <div style="display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: 16px; background: var(--surface); min-height: 140px;">
+          <span style="font-size: 11px; line-height: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .6px;">{{e.where}}</span>
+          <span style="font-size: 14px; line-height: 20px; font-weight: 600; color: {{e.color}};">{{e.title}}</span>
+          <span style="font-size: 13px; line-height: 19px; color: var(--text-muted);">{{e.body}}</span>
+          <span style="margin-top: auto; padding-top: 4px; font-size: 13px; font-weight: 600; color: var(--mint);">{{e.action}}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1440}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const M = 'var(--mint)', T = 'var(--text)', D = 'var(--danger)', Mu = 'var(--text-muted)';
+    const st = [
+      ['…', 'Preparando envío', 'Preparando IMG_…3310.jpg', 'Mi Android quiere enviarte IMG_…3310.jpg (4.8 MB)', '', T, M],
+      ['…', 'Preparando recepción', 'Esperando a PC de casa…', 'Preparando recepción… (aparece la miniatura)', '', T, M],
+      ['↑', 'Enviando / Recibiendo', 'Enviando a PC de casa · 62 %', 'Recibiendo de Mi Android · 62 %', 'Cancelar', T, Mu],
+      ['✓?', 'Verificando', 'Verificando que llegó completo…', 'Verificando…', '', T, M],
+      ['✓', 'Enviado', 'Enviado a PC de casa', '—', '', M, M],
+      ['✓', 'Recibido y verificado', '—', 'Guardado en Documentos › Terax › Recibidos', 'Abrir', M, M],
+      ['×', 'Cancelado', 'Envío cancelado', 'Mi Android canceló el envío. No se guardó nada.', '', Mu, M],
+      ['!', 'Fallido', 'Se perdió la conexión al 62 %. No se guardó nada.', 'La transferencia se interrumpió y se descartó.', 'Reintentar', D, M],
+      ['!', 'Error de integridad', 'PC de casa recibió el archivo dañado y lo descartó.', 'El archivo llegó dañado y se descartó.', 'Reintentar', D, M]
+    ];
+    const is = [
+      ['Android', 'Bluetooth apagado', 'Puedes seguir enviando por Wi-Fi. Actívalo para saber cuándo tu PC está cerca.', 'Activar Bluetooth', T],
+      ['Android', 'Sin Bluetooth en este teléfono', 'Terax funciona igual por Wi-Fi; solo no sabremos si están cerca.', '', T],
+      ['Android', 'Sin permiso de dispositivos cercanos', 'Sin él no podemos detectar si tu PC está cerca.', 'Abrir permisos', T],
+      ['Android', 'Cámara sin permiso', 'La necesitamos solo para escanear el código QR de tu PC.', 'Permitir cámara · Pegar código', T],
+      ['Android', 'Ese QR no es de Terax', 'Escanea el código que aparece en Terax, en tu PC.', 'Volver a escanear', D],
+      ['Android', 'Código de conexión inválido', 'Está incompleto o ya venció. Copia uno nuevo desde tu PC.', 'Pegar otro código', D],
+      ['Ambos', 'PC de casa no responde', 'Sigue vinculada. ¿Está encendida, con Terax abierto y en la misma red?', 'Reintentar', T],
+      ['Ambos', 'Reconectando…', 'Buscando PC de casa en tu red. Esto suele tardar unos segundos.', '', T],
+      ['Android', 'Acceso parcial a fotos', 'Solo ves las fotos que elegiste.', 'Elegir más fotos', T],
+      ['Android', 'Carpeta sin permiso', 'Android retiró el acceso a WhatsApp. Autorízala otra vez.', 'Volver a autorizar', D],
+      ['Ambos', 'El archivo ya no existe', 'Se movió o se borró desde que abriste la biblioteca.', 'Actualizar', D],
+      ['Ambos', 'Archivo demasiado grande', 'Pesa 1.4 GB. El máximo por archivo es 1 GB.', '', D],
+      ['Ambos', 'PC de casa está ocupada', 'Está recibiendo otro archivo. Inténtalo cuando termine.', 'Reintentar', T],
+      ['Ambos', 'Recepción pausada', 'PC de casa no está aceptando archivos ahora.', 'Activar recepción (en la PC)', T],
+      ['Windows', 'No hay app para abrirlo', 'Se guardó bien, pero ninguna app abre archivos .heic.', 'Mostrar en carpeta', T],
+      ['Windows', 'Efecto de escritorio no disponible', 'No se pudo mostrar la onda. Te avisamos con una notificación.', 'Probar efecto', T],
+      ['Windows', 'Terax sigue en la bandeja', 'Cerraste la ventana, pero sigue listo para recibir. Para salir, usa Salir desde su icono.', 'Entendido', T],
+      ['Windows', 'No se abrió automáticamente', 'Los ejecutables y archivos con macros nunca se abren solos.', 'Mostrar en carpeta', T],
+      ['Android', 'Ningún equipo vinculado', 'Vincula tu PC una vez y después se reconectan solos.', 'Vincular PC', T],
+      ['Android', 'Búsqueda sin resultados', 'Ningún archivo cargado se llama “factura 2025”. Se busca por nombre.', 'Cargar más fotos', T]
+    ];
+    return {
+      states: st.map(s => ({ icon: s[0], name: s[1], android: s[2], windows: s[3], action: s[4], color: s[5], actionColor: s[6] })),
+      issues: is.map(e => ({ where: e[0], title: e[1], body: e[2], action: e[3], color: e[4] }))
+    };
+  }
+}
+</script>
+</body>
+</html>

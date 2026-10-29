@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Recibido y verificado</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="terax.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="tx-root" style="width: 1280px; height: 800px; display: flex; overflow: hidden; border-radius: 10px; border: 1px solid #222c38; background: var(--bg);">
+  <nav aria-label="Secciones" style="width: 232px; flex: none; display: flex; flex-direction: column; gap: 4px; padding: 24px 16px; border-right: 1px solid #18212c;">
+    <img src="/_blob/9f2c0fcfd4186b307185bfb8c405152b" alt="terax" style="height: 26px; width: auto; align-self: flex-start; margin: 0 8px 28px;">
+    <a href="WindowsRecibir.dc.html" aria-current="page" style="display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 12px; border-radius: 12px; background: var(--surface); color: var(--mint); font-size: 14px; font-weight: 600; text-decoration: none;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7L7 17M16 17H7V8"/></svg>Recibir
+    </a>
+    <a href="WindowsEnviar.dc.html" style="display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 12px; border-radius: 12px; color: var(--text-muted); font-size: 14px; font-weight: 600; text-decoration: none;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>Enviar al teléfono
+    </a>
+  </nav>
+
+  <main style="flex: 1; min-width: 0; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 56px;">
+    <div aria-hidden="true" style="position: absolute; left: -10%; right: -10%; bottom: -260px; height: 520px; background: radial-gradient(50% 50% at 50% 62%, rgba(155,233,221,.42) 0%, rgba(155,233,221,.14) 36%, rgba(155,233,221,0) 70%);"></div>
+    <div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--mint);"></div>
+    <div aria-hidden="true" style="position: absolute; left: 50%; bottom: -300px; width: 900px; height: 600px; margin-left: -450px; border-radius: 999px; border: 1.5px solid rgba(155,233,221,.22);"></div>
+    <div aria-hidden="true" style="position: absolute; left: 50%; bottom: -420px; width: 1300px; height: 840px; margin-left: -650px; border-radius: 999px; border: 1.5px solid rgba(155,233,221,.10);"></div>
+
+    <div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+      <div style="width: 264px; height: 352px; border-radius: 18px; background: #2f4256; border: 2px solid var(--mint); position: relative; overflow: hidden;">
+        <span style="position: absolute; left: 0; right: 0; bottom: 0; height: 42%; background: #3e5263;"></span>
+        <span style="position: absolute; left: 22%; top: 24%; width: 64px; height: 64px; border-radius: 999px; background: #8a9aa6;"></span>
+      </div>
+
+      <section role="status" aria-live="polite" style="width: 520px; padding: 18px 20px; border-radius: 20px; background: var(--surface); display: flex; flex-direction: column; gap: 14px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="width: 32px; height: 32px; flex: none; border-radius: 999px; background: var(--mint); color: var(--on-mint); display: grid; place-items: center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>
+          </span>
+          <span style="flex: 1; min-width: 0; display: flex; flex-direction: column;">
+            <span style="font-size: 16px; line-height: 22px; font-weight: 600;">Recibido y verificado</span>
+            <span style="font-size: 13px; line-height: 18px; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">IMG_20261028_093310.jpg · 4.8 MB · desde Mi Android</span>
+          </span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <button style="height: 40px; padding: 0 20px; border: 0; border-radius: 12px; background: var(--mint); color: var(--on-mint); font-size: 14px; font-weight: 600; cursor: pointer;">Abrir</button>
+          <button style="height: 40px; padding: 0 16px; border: 1px solid var(--outline); border-radius: 12px; background: transparent; font-size: 14px; font-weight: 600; cursor: pointer;">Mostrar en carpeta</button>
+          <span style="flex: 1;"></span>
+          <span style="font-size: 12px; line-height: 16px; color: var(--text-muted); text-align: right;">Se abre en Fotos en 2 s<br><button style="padding: 0; border: 0; background: transparent; color: var(--mint); font-size: 12px; font-weight: 600; cursor: pointer;">No abrir</button></span>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

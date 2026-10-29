@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Llegada con Terax minimizado</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="terax.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="tx-root" style="width: 1280px; height: 800px; position: relative; overflow: hidden; border-radius: 10px; background: #26303b;">
+  <div aria-hidden="true" style="position: absolute; left: 120px; top: 70px; width: 760px; height: 520px; border-radius: 10px; background: #e8ebef; display: flex; flex-direction: column; overflow: hidden;">
+    <div style="height: 36px; background: #d5dae0;"></div>
+    <div style="flex: 1; padding: 36px 48px; display: flex; flex-direction: column; gap: 14px;">
+      <span style="height: 14px; width: 46%; border-radius: 4px; background: #b9c1ca;"></span>
+      <span style="height: 9px; width: 92%; border-radius: 4px; background: #cdd3da;"></span>
+      <span style="height: 9px; width: 88%; border-radius: 4px; background: #cdd3da;"></span>
+      <span style="height: 9px; width: 95%; border-radius: 4px; background: #cdd3da;"></span>
+      <span style="height: 9px; width: 60%; border-radius: 4px; background: #cdd3da;"></span>
+    </div>
+  </div>
+
+  <div aria-hidden="true" style="position: absolute; left: -10%; right: -10%; bottom: -140px; height: 420px; background: radial-gradient(50% 50% at 50% 70%, rgba(155,233,221,.50) 0%, rgba(155,233,221,.16) 38%, rgba(155,233,221,0) 70%);"></div>
+  <div aria-hidden="true" style="position: absolute; left: 50%; bottom: -260px; width: 820px; height: 560px; margin-left: -410px; border-radius: 999px; border: 2px solid rgba(155,233,221,.30);"></div>
+  <div aria-hidden="true" style="position: absolute; left: 50%; bottom: -380px; width: 1240px; height: 800px; margin-left: -620px; border-radius: 999px; border: 2px solid rgba(155,233,221,.14);"></div>
+
+  <div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 48px; background: rgba(16,21,28,.92); display: flex; align-items: center; justify-content: center; gap: 10px;">
+    <span style="width: 28px; height: 28px; border-radius: 6px; background: #3a4552;"></span>
+    <span style="width: 28px; height: 28px; border-radius: 6px; background: #3a4552;"></span>
+    <span style="width: 28px; height: 28px; border-radius: 6px; background: #3a4552;"></span>
+    <span style="position: absolute; right: 120px; top: 12px; width: 24px; height: 24px; border-radius: 6px; outline: 2px solid var(--mint); outline-offset: 3px; display: grid; place-items: center;"><img src="/_blob/78dbae02def483c32e615a60e9480dd7" alt="" style="width: 22px; height: 22px;"></span>
+    <span style="position: absolute; right: 20px; top: 15px; font-size: 12px; color: #c9d1da;">10:42</span>
+  </div>
+
+  <section role="status" aria-live="polite" style="position: absolute; right: 16px; bottom: 64px; width: 360px; padding: 16px; border-radius: 14px; background: var(--surface); border: 1px solid #2a3644; display: flex; flex-direction: column; gap: 12px;">
+    <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-muted);">
+      <img src="/_blob/78dbae02def483c32e615a60e9480dd7" alt="" style="width: 16px; height: 16px;">Terax
+    </div>
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <span style="width: 56px; height: 56px; flex: none; border-radius: 10px; background: #2f4256;"></span>
+      <span style="flex: 1; min-width: 0; display: flex; flex-direction: column;">
+        <span style="font-size: 14px; line-height: 20px; font-weight: 600; display: flex; align-items: center; gap: 6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Recibido y verificado</span>
+        <span style="font-size: 12px; line-height: 17px; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">IMG_20261028_093310.jpg · 4.8 MB</span>
+      </span>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <button style="flex: 1; height: 36px; border: 0; border-radius: 10px; background: var(--mint); color: var(--on-mint); font-size: 13px; font-weight: 600; cursor: pointer;">Abrir</button>
+      <button style="flex: 1; height: 36px; border: 1px solid var(--outline); border-radius: 10px; background: transparent; font-size: 13px; font-weight: 600; cursor: pointer;">Mostrar en carpeta</button>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

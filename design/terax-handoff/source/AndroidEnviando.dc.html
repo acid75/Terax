@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Enviando</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="terax.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="tx-root android" style="width: 390px; height: 844px; position: relative; overflow: hidden; background: var(--bg);">
+  <div aria-hidden="true" style="position: absolute; left: -40px; right: -40px; top: -160px; height: 360px; background: radial-gradient(50% 50% at 50% 30%, rgba(171,231,221,.30) 0%, rgba(171,231,221,.10) 40%, rgba(171,231,221,0) 72%);"></div>
+
+  <section role="status" aria-label="Envío en curso" style="position: absolute; left: 12px; right: 12px; top: 48px; padding: 14px 14px 16px; border-radius: 22px; background: var(--surface); border: 1px solid var(--outline); display: flex; flex-direction: column; gap: 12px;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span style="width: 48px; height: 48px; flex: none; border-radius: 10px; background: #2f4256; position: relative; overflow: hidden;">
+        <span style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: #3e5263;"></span>
+      </span>
+      <span style="flex: 1; min-width: 0; display: flex; flex-direction: column;">
+        <span style="font-size: 15px; line-height: 20px; font-weight: 600;">Enviando a PC de casa</span>
+        <span style="font-size: 13px; line-height: 18px; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">IMG_20261028_093310.jpg</span>
+      </span>
+      <button aria-label="Cancelar envío" style="height: 40px; padding: 0 12px; border: 0; border-radius: 999px; background: transparent; color: var(--text-muted); font-size: 14px; font-weight: 600; cursor: pointer;">Cancelar</button>
+    </div>
+    <div role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" aria-label="Progreso del envío" style="height: 6px; border-radius: 999px; background: var(--bg); overflow: hidden;">
+      <div style="width: 62%; height: 100%; border-radius: 999px; background: var(--mint);"></div>
+    </div>
+    <div style="display: flex; justify-content: space-between; font-size: 12px; line-height: 16px; color: var(--text-muted);">
+      <span style="font-family: var(--font-mono);">3.0 de 4.8 MB</span>
+      <span>Mantén Terax abierto hasta que termine</span>
+    </div>
+  </section>
+
+  <div style="position: absolute; left: 16px; right: 16px; top: 236px;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px;">
+      <span style="font-size: 13px; line-height: 18px; font-weight: 600;">Hoy</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px 4px;">
+      <div style="aspect-ratio: 1 / 1; border-radius: 10px; background: #4b5a6b;"></div>
+      <div style="aspect-ratio: 1 / 1; border-radius: 10px; background: #6b5c49;"></div>
+      <div style="aspect-ratio: 1 / 1; border-radius: 10px; background: #2f4256; position: relative;">
+        <span style="position: absolute; right: 6px; top: 6px; width: 24px; height: 24px; border-radius: 999px; background: var(--mint); color: var(--on-mint); display: grid; place-items: center;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+        </span>
+      </div>
+      <div style="aspect-ratio: 1 / 1; border-radius: 10px; background: #56634a;"></div>
+      <div style="aspect-ratio: 1 / 1; border-radius: 10px; background: #3d4b5a;"></div>
+      <div style="aspect-ratio: 1 / 1; border-radius: 10px; background: #71604d;"></div>
+      <div style="aspect-ratio: 1 / 1; border-radius: 10px; background: #2c3a48;"></div>
+      <div style="aspect-ratio: 1 / 1; border-radius: 10px; background: #5a6875;"></div>
+      <div style="aspect-ratio: 1 / 1; border-radius: 10px; background: #4a4f5c;"></div>
+      <div style="aspect-ratio: 1 / 1; border-radius: 10px; background: #665a50;"></div>
+      <div style="aspect-ratio: 1 / 1; border-radius: 10px; background: #38495a;"></div>
+      <div style="aspect-ratio: 1 / 1; border-radius: 10px; background: #55606b;"></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

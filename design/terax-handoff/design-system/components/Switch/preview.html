@@ -1,0 +1,7 @@
+<!-- @dsCard group="Acciones" height=150 -->
+<style>html,body{margin:0;background:var(--bg)}.pv{padding:16px;display:flex;flex-direction:column;gap:12px}</style>
+<div class="tx pv">
+  <div class="tx-row" style="background:var(--surface);border-radius:var(--radius-lg)"><div class="tx-row-text"><div class="tx-row-title">Permitir recepción</div><div class="tx-row-sub">Desde tus equipos vinculados</div></div><button class="tx-switch" role="switch" aria-checked="true" aria-label="Permitir recepción"></button></div>
+  <div class="tx-row" style="background:var(--surface);border-radius:var(--radius-lg)"><div class="tx-row-text"><div class="tx-row-title">Abrir fotos y documentos al recibir</div><div class="tx-row-sub">Después de verificar el archivo</div></div><button class="tx-switch" role="switch" aria-checked="false" aria-label="Abrir fotos y documentos al recibir"></button></div>
+</div>
+<script>document.querySelectorAll('.tx-switch').forEach(function(b){b.addEventListener('click',function(){b.setAttribute('aria-checked',b.getAttribute('aria-checked')==='true'?'false':'true')})})</script>
